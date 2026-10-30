@@ -1,0 +1,51 @@
+@startuml
+skinparam classAttributeIconSize 0
+interface "Subject<E>" as Subject
+interface "Observer<E>" as Observer
+class EventSource
+class ArrivalFeed
+class TicketFeed
+class RouteAggregator
+class InspectionListener
+interface TransitNode
+interface ContainerNode
+interface "TransitVisitor<R>" as Visitor
+class TransitNetwork
+class TransitRoute
+class TransitStop
+class Bus
+class Tram
+class Station
+class TicketMachine
+class FuelVisitor
+class RevenueVisitor
+class InventoryVisitor
+class AccessibilityVisitor
+class JsonExportVisitor
+Subject <|.. EventSource
+Subject <|.. ArrivalFeed
+Subject <|.. TicketFeed
+Subject <|.. RouteAggregator
+Observer <|.. RouteAggregator
+Observer <|.. InspectionListener
+EventSource <-- ArrivalFeed
+EventSource <-- TicketFeed
+InspectionListener --> Visitor : runs on related stop
+TransitNode <|-- ContainerNode
+ContainerNode <|.. TransitNetwork
+ContainerNode <|.. TransitRoute
+ContainerNode <|.. TransitStop
+TransitNode <|.. Bus
+TransitNode <|.. Tram
+TransitNode <|.. Station
+TransitNode <|.. TicketMachine
+TransitNetwork o-- TransitRoute
+TransitRoute o-- TransitStop
+TransitStop o-- TransitNode
+Visitor <|.. FuelVisitor
+Visitor <|.. RevenueVisitor
+Visitor <|.. InventoryVisitor
+Visitor <|.. AccessibilityVisitor
+Visitor <|.. JsonExportVisitor
+TransitNode ..> Visitor : accept / double dispatch
+@enduml
