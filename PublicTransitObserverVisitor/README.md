@@ -66,4 +66,4 @@ This is a **documented live-coding plan**, not a claim that those commits have a
 
 ## UML
 
-See [`PublicTransitObserverVisitor/docs/image.png`](PublicTransitObserverVisitor/docs/image.png)
+See [`docs/image.png`](docs/image.png)
