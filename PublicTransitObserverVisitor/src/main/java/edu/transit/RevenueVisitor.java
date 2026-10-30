@@ -9,6 +9,10 @@ public final class RevenueVisitor extends WalkingVisitor<Double> {
     public Double visitBus(Bus n) {
         return 0.0;
     }
+    @Override
+    public Double visitElectricBus(ElectricBus n) {
+        return 0.0;
+    }
     public Double visitTram(Tram n) {
         return 0.0;
     }

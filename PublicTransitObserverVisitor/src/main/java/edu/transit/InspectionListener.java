@@ -1,8 +1,6 @@
 package edu.transit;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentMap;
-
 
 public final class InspectionListener implements Observer<TransitEvent> {
     private final Map<String, TransitStop> stops;

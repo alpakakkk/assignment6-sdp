@@ -15,6 +15,10 @@ public final class AccessibilityVisitor extends WalkingVisitor<List<TransitNode 
     public List<TransitNode>visitBus(Bus n) {
         return filter(n, n.accessible());
     }
+    @Override
+    public List<TransitNode> visitElectricBus(ElectricBus n) {
+        return filter(n, n.accessible());
+    }
     public List<TransitNode>visitTram(Tram n) {
         return filter(n, n.accessible());
     }

@@ -16,6 +16,10 @@ public final class JsonExportVisitor extends WalkingVisitor<String> {
     public String visitBus(Bus n) {
         return leaf(n);
     }
+    @Override
+    public String visitElectricBus(ElectricBus n) {
+        return leaf(n);
+    }
     public String visitTram(Tram n) {
         return leaf(n);
     }

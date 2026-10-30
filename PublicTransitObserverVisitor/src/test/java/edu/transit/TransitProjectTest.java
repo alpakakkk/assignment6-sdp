@@ -1,8 +1,6 @@
 package edu.transit;
 
 import org.junit.jupiter.api.Test;
-import java.util.*;
-import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import static org.junit.jupiter.api.Assertions.*;
 

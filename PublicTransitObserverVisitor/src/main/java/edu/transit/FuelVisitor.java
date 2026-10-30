@@ -9,6 +9,10 @@ public final class FuelVisitor extends WalkingVisitor<Double> {
     public Double visitBus(Bus n) {
         return n.fuelLitres();
     }
+    @Override
+    public Double visitElectricBus(ElectricBus n) {
+        return 0.0;
+    }
     public Double visitTram(Tram n) {
         return 0.0;
     }

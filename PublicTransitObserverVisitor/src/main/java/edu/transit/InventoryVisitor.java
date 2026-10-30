@@ -17,6 +17,10 @@ public final class InventoryVisitor extends WalkingVisitor<Void> {
     public Void visitBus(Bus n) {
         return leaf(n);
     }
+    @Override
+    public Void visitElectricBus(ElectricBus n) {
+        return leaf(n);
+    }
     public Void visitTram(Tram n) {
         return leaf(n);
     }
