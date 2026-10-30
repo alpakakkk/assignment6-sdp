@@ -2,14 +2,8 @@
 
 Java 17 · JUnit 5 · Maven · Observer + Visitor + Composite · No runtime libraries
 
-## Quick start
-
-```bash
-mvn clean test
-mvn exec:java
-```
-
-Open the `pom.xml` in IntelliJ IDEA and select **JDK 17**. Maven will download JUnit 5 for the test phase. The demo uses deterministic synthetic data and needs no database, internet access or external services at runtime.
+### Student: Almanzor Kamzeyev
+### Group: SE-2540
 
 ## Design and architecture
 
@@ -73,14 +67,3 @@ This is a **documented live-coding plan**, not a claim that those commits have a
 ## UML
 
 See [`docs/architecture.puml`](docs/architecture.puml). Paste into PlantUML or install a PlantUML IntelliJ extension to export PNG.
-
-## Defense (short English script)
-
-> My Assignment 6 project is TransitPulse, variant 15, public transport. I implemented two patterns: Observer for live transport events and Visitor for operations on a transport tree. ArrivalFeed and TicketFeed publish immutable typed events to subscribed listeners. A route aggregator is both a listener and a subject. The Visitor side has Network, Route, Stop and four device types. I implemented visitors for fuel, revenue, inventory, accessibility and JSON export. When a serious delay arrives, the inspection listener runs a visitor only on the affected stop and sends a new report event. My subjects use concurrent collections and snapshots, and my four-producer stress test verifies exactly 4000 events. I used constructor injection, one composition root, JUnit tests and a UML diagram.
-
-### Typical questions
-
-- **Why double dispatch?** `node.accept(visitor)` dynamically selects the element-specific `visitBus` or `visitTram` overload; directly calling `visit(node)` with a base static type cannot choose the correct overload.
-- **Why CopyOnWriteArrayList?** Safe iteration snapshots and self-unsubscription without holding a global subject lock; writes are more expensive than reads.
-- **Why use Visitor?** New calculations need a new visitor only; the cost is that every visitor must change for a new element type.
-- **Why only the stop subtree?** The delay event identifies stopId; searching the index avoids unnecessary traversal of unrelated routes.
