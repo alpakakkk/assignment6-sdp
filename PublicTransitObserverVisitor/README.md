@@ -66,4 +66,4 @@ This is a **documented live-coding plan**, not a claim that those commits have a
 
 ## UML
 
-See [`docs/architecture.puml`](docs/architecture.puml). Paste into PlantUML or install a PlantUML IntelliJ extension to export PNG.
+See [`docs/image.png`](docs/image.png). Paste into PlantUML or install a PlantUML IntelliJ extension to export PNG.
